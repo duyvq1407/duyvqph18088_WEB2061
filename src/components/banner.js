@@ -1,8 +1,10 @@
 const Banner = {
     render() {
-        return `
+        return /* html */`
             <div>
-                <img src="https://caodang.fpt.edu.vn/wp-content/uploads/FPT_Polytechnic_banner_xet_tuyen_online1.png" width="100%">
+                <a href="#">
+                    <img src="https://scontent.fhan5-4.fna.fbcdn.net/v/t1.6435-9/166747301_269460124778751_6188825667423068322_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=e3f864&_nc_ohc=aCu_KxzKE0wAX9cLtBR&_nc_ht=scontent.fhan5-4.fna&oh=00_AT-YC7Q-5I-_t34LRUTa1KmDYY-Da9Vj3NeugjXhI0SOhw&oe=62252DCF" width="100%">
+                </a>
             </div>
         `;
     },
