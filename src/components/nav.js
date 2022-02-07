@@ -17,8 +17,10 @@ const NavBar = {
                                                 <a href="index.php">Trang chủ</a>
                                             </li>
                                             <li class="main_nav-item" onclick="openListLink()">
-                                                <a href="index.php" aria-readonly="true">Sản phẩm
-                                                    <i class="fas fa-chevron-down" style="font-size: 14px;"></i>
+                                                <a href="index.php" class="flex items-center" aria-readonly="true">Sản phẩm
+                                                    <svg aria-hidden="true" class="duration-500 ease-in-out transition-all fa-chevron-down h-[14px] ml-1" viewBox="0 0 448 512">
+                                                        <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                                                    </svg>
                                                 </a>
                                                 <ul>
                                                     <li><a href="#">Tee | Áo thun</a></li>

@@ -90,12 +90,7 @@ html {
     top: 27px;
 }
 
-.main_nav-item a i{
-    transition: all 500ms ease-in-out;
-    font-size: 14px;
-}
-
-.main_nav-item:hover a i{
+.main_nav-item:hover a svg{
     transform: rotate(180deg);
 }
 
