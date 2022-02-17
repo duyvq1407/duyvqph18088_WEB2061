@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
-    <title>Vite App</title>
+    <title>Poly Shop</title>
   </head>
   <body style="height: 1000px;">
     <div class="m-auto">
-      <div id="promo-bar"></div>
       <header id="header"></header>
       <div id="app"></div>
       <footer id="footer"></footer>
@@ -17,7 +15,6 @@
     <script type="module" src="./src/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      console.log('hi')
       $(window).scroll(function() {
         if ($(this).scrollTop() > 35) {
             $('.header').addClass('scrolled');

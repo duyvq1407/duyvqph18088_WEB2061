@@ -7,7 +7,7 @@ const NavBar = {
                         <div class="row">
                             <div class="col-12">
                                 <div class="header_content h-[130px] transition-all duration-300 flex flex-row items-center justify-start">
-                                    <div class="logo"><a href="#"><img class="h-[100px]" src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"></a></div>
+                                    <div class="logo"><a href="#"><img class="h-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1280px-Disney_wordmark.svg.png"></a></div>
                                     <nav class="main_nav ml-[130px]">
                                         <div class="close_menu">
                                             <i class="fas fa-times" onclick="closeMenu()"></i>

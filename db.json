@@ -1,0 +1,209 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Tee | Áo thun"
+    },
+    {
+      "id": "2",
+      "name": "Pant | Quần"
+    },
+    {
+      "id": "3",
+      "name": "Jacket | Áo khoác"
+    },
+    {
+      "name": "Accessories | Phụ kiện",
+      "id": "4"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Tornado Tee",
+      "cate_id": "1",
+      "price": "149000",
+      "detail": "Detail1",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645048428/nwzahlxcqpwdhhknivnl.jpg"
+    },
+    {
+      "name": "Sunset Tee Black",
+      "cate_id": "1",
+      "price": "149000",
+      "detail": "Detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996210/u5s2pemngyawysw0mm0u.webp",
+      "id": 2
+    },
+    {
+      "name": "Have Fun Tee",
+      "cate_id": "1",
+      "price": "149000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996238/w3xyyj3pode8kf5jv9tu.jpg",
+      "id": 3
+    },
+    {
+      "name": "ÁO PHÔNG OVERSIZE TRIPBLE B",
+      "cate_id": "1",
+      "price": "199000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996367/nw5zu7wiiynee6bmtu7i.jpg",
+      "id": 4
+    },
+    {
+      "name": "ÁO PHÔNG OVERSIZE LIL PUMP",
+      "cate_id": "1",
+      "price": "199000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996402/qnke04h1a3bes8vnllhg.jpg",
+      "id": 5
+    },
+    {
+      "name": "Quần dài Line Buttons Pants",
+      "cate_id": "2",
+      "price": "249000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996500/mi88vkr5epsglth3m8xw.jpg",
+      "id": 6
+    },
+    {
+      "name": "QUẦN DÀI RACING PANTS",
+      "cate_id": "2",
+      "price": "459000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997264/yiy6hc9j6haw4jkhrbtj.jpg",
+      "id": 7
+    },
+    {
+      "name": "QUẦN DÀI KAKI BASIC",
+      "cate_id": "2",
+      "price": "249000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997431/vgizvxqi2cfmlfvhcguy.jpg",
+      "id": 8
+    },
+    {
+      "name": "QUẦN DÀI WIDE PANTS",
+      "cate_id": "2",
+      "price": "300000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997563/sq83clmsy3vg0vmn5kmx.jpg",
+      "id": 9
+    },
+    {
+      "name": "QUẦN DÀI BLACK BUTTONS PANTS",
+      "cate_id": "2",
+      "price": "249000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997667/ccgqzmebqnhiatiug1cc.jpg",
+      "id": 10
+    },
+    {
+      "name": "ÁO KHOÁC PARKA K.R",
+      "cate_id": "3",
+      "price": "499000",
+      "detail": "ÁO KHOÁC PARKA K.R",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997810/fh4n6cvthxemb3fo1axq.jpg",
+      "id": 11
+    },
+    {
+      "name": "ÁO KHOÁC KAKI ",
+      "cate_id": "3",
+      "price": "379000",
+      "detail": "ÁO KHOÁC KAKI",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997840/q09jniaeyj1f1azju9rd.jpg",
+      "id": 12
+    },
+    {
+      "name": "ÁO HOODIE JACKET OVERSIZE TÚI HỘP",
+      "cate_id": "3",
+      "price": "219000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997867/mp46wkoocnzvhqeyfvum.jpg",
+      "id": 13
+    },
+    {
+      "name": "ÁO KHOÁC MOUNTAIN PARKA",
+      "cate_id": "3",
+      "price": "499000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997933/gvdfjx8q2llqrsopvz62.jpg",
+      "id": 14
+    },
+    {
+      "name": "ÁO KHOÁC DA BIKER",
+      "cate_id": "3",
+      "price": "450000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997988/km8lvwzulluioqdtqzsy.jpg",
+      "id": 15
+    },
+    {
+      "name": "MŨ LEN ADVENTURETIME",
+      "cate_id": "4",
+      "price": "79000",
+      "detail": "MŨ LEN ADVENTURETIME",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998027/qvmj4ak2gygg8bnpaxpv.jpg",
+      "id": 16
+    },
+    {
+      "name": "MŨ MIKIHAT",
+      "cate_id": "4",
+      "price": "79000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998152/pbmyn9wwbdckylysqmra.jpg",
+      "id": 17
+    },
+    {
+      "name": "MŨ LEN BEANI HAT DREW",
+      "cate_id": "4",
+      "price": "99000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998180/d1ydn8yrtbbewmtel0rg.jpg",
+      "id": 18
+    },
+    {
+      "name": "MŨ LEAN BEANI HAT BASIC",
+      "cate_id": "4",
+      "price": "59000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998213/wwoxz2fq6sobqz2f76ao.jpg",
+      "id": 19
+    },
+    {
+      "name": "TÚI ĐEO CHÉO DIAGONAL",
+      "cate_id": "4",
+      "price": "219000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998288/voekt7u1948fumv54cat.jpg",
+      "id": 20
+    },
+    {
+      "name": "KHĂN LEN J.L SCRAFT",
+      "cate_id": "4",
+      "price": "149000",
+      "detail": "detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998356/juqwmnswnsh95v5mgq4o.jpg",
+      "id": 21
+    }
+  ],
+  "orders": [
+    {
+      "customer_name": "",
+      "customer_address": "",
+      "customer_email": "",
+      "customer_phone_number": "",
+      "created_date": "",
+      "status": "",
+      "id": "1"
+    }
+  ],
+  "order_details": [
+    {
+      "product_id": "",
+      "quantity": "",
+      "unit_price": "",
+      "order_id": ""
+    }
+  ]
+}
