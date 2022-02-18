@@ -38,6 +38,9 @@ const listProductPage = {
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Image
                                     </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Detail Image
+                                    </th>
                                     <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Edit</span>
                                     </th>
@@ -63,6 +66,9 @@ const listProductPage = {
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 <img src="${product.image}" class="max-h-[70px]">
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <img src="${product.image2}" class="max-h-[70px]">
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <a href="/admin/products/${product.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>

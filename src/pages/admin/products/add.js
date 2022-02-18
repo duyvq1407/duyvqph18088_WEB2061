@@ -52,25 +52,30 @@ const AddProductPage = {
                                             <input type="text" name="detail" autocomplete="detail" id="detail-product"
                                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                         </div>
-                                        <div class="col-span-12">
+                                        <div class="col-span-6">
                                             <label class="block text-sm font-medium text-gray-700">Image</label>
                                             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                                 <div class="space-y-1 text-center">
-                                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg>
+                                                    <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" 
+                                                    class="max-h-[70px] mx-auto" id="imgPreview" />
                                                     <div class="flex text-sm text-gray-600">
-                                                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                                                        <span>Upload a file</span>
-                                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                                                    </label>
-                                                    <p class="pl-1">or drag and drop</p>
+                                                        <input id="image" name="image" type="file">
                                                     </div>
-                                                    <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        </div>
+                                        </div>                                        
+                                        <div class="col-span-6">
+                                            <label class="block text-sm font-medium text-gray-700">Detail Image</label>
+                                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                                <div class="space-y-1 text-center">
+                                                    <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" 
+                                                    class="max-h-[70px] mx-auto" id="imgPreview2" />
+                                                    <div class="flex text-sm text-gray-600">
+                                                        <input id="image2" name="image2" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>     
                                     </div>
                                 </div>
                                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
@@ -87,16 +92,27 @@ const AddProductPage = {
     },
     afterRender() {
         const formAdd = document.querySelector("#form-add-product");
-        const imgPost = document.querySelector("#file-upload");
+        const imgPost = document.querySelector("#image");
+        const imgPost2 = document.querySelector("#image2");
+        const imgPreview = document.querySelector("#imgPreview");
+        const imgPreview2 = document.querySelector("#imgPreview2");
 
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duyvqph18088/image/upload";
         const CLOUDINARY_PRESET = "y12jh0jj";
+
+        imgPost.addEventListener("change", (e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
+        imgPost2.addEventListener("change", (e) => {
+            imgPreview2.src = URL.createObjectURL(e.target.files[0]);
+        });
 
         formAdd.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             // Lấy giá trị input file
             const file = imgPost.files[0];
+            const file2 = imgPost2.files[0];
 
             // append vào object formData
             const formData = new FormData();
@@ -109,14 +125,24 @@ const AddProductPage = {
                     "Content-Type": "application/form-data",
                 },
             });
+            const formData2 = new FormData();
+            formData2.append("file", file2);
+            formData2.append("upload_preset", CLOUDINARY_PRESET);
+
+            // call api cloudinary
+            const response2 = await axios.post(CLOUDINARY_API, formData2, {
+                headers: {
+                    "Content-Type": "application/form-data",
+                },
+            });
             addProduct({
                 name: document.querySelector("#name-product").value,
                 cate_id: document.querySelector("#cate_Id").value,
                 price: document.querySelector("#price-product").value,
                 detail: document.querySelector("#detail-product").value,
                 image: response.data.url,
+                image2: response2.data.url,
             });
-            document.location.href = "/admin/products";
         });
     },
 };
