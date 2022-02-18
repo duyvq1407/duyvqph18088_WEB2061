@@ -208,3 +208,107 @@ a:hover{
     transition: all 400ms;
 }
 
+.sanphammoi_tiltle h2:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 55px;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    background: #000000;
+}
+
+.sanphammoi_tiltle h2 {
+    font-size: 28px;
+    line-height: 1.6;
+    margin: 0 0 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 0 0 10px;
+    display: inline-block;
+}
+
+.sanphammoi_tiltle h2 a{
+    color: #1b1b1b;
+
+}
+
+.sanphammoi_tiltle h2 a:hover, .sanphammoi_tiltle .view-all a:hover{
+    color: #000000;
+}
+
+.sanphammoi_tiltle .view-all a {
+    display: inline-block;
+    font-size: 13px;
+    color: #1b1b1b;
+}
+.pro-loop {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background: #fff;
+}
+
+.pro-loop .product_img {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pro-loop .product_detail {
+    padding: 20px 0;
+    text-align: center;
+    z-index: 9;
+    width: 100%;
+}
+
+.pro-loop .product_detail h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.pro-loop .product_detail h3 a {
+    line-height: 16px;
+    overflow: hidden;
+    font-weight: 500;
+    color: #1b1b1b;
+}
+
+.pro-loop .product_detail h3 a:hover{
+    color: black;
+}
+
+.product_detail-price p{
+    font-size: 14px;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Thay ảnh khi hover */
+.figure {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+.figure img.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.figure:hover img.image-hover {
+  opacity: 1;
+}
+
+
+

@@ -1,9 +1,9 @@
 const NavBar = {
     render() {
         return /* html */`
-            <div class="header fixed top-8 left-0 right-0 z-100 h-[70px] shadow-lg">
+            <div class="header fixed top-8 left-0 right-0 z-50 h-[70px] shadow-lg">
                 <div class="header_container bg-[#fff] z-1">
-                    <div class="container m-auto max-w-[1028px]">
+                    <div class="container m-auto max-w-5xl">
                         <div class="row">
                             <div class="col-12">
                                 <div class="header_content h-[130px] transition-all duration-300 flex flex-row items-center justify-start">

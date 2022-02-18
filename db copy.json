@@ -19,30 +19,27 @@
   ],
   "products": [
     {
-      "name": "ÁO THUN OVERSIZE WOOLEN HEAD",
+      "id": 1,
+      "name": "Tornado Tee",
       "cate_id": "1",
-      "price": "185000",
+      "price": "149000",
       "detail": "Detail1",
-      "image": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171714/%C3%81O_THUN_OVERSIZE_WOOLEN_HEAD_p6i5au.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171715/%C3%81O_THUN_OVERSIZE_WOOLEN_HEAD2_eb647x.jpg",
-      "id": 1
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645048428/nwzahlxcqpwdhhknivnl.jpg"
     },
     {
-      "name": "ÁO THUN HALF FACE",
+      "name": "Sunset Tee Black",
       "cate_id": "1",
-      "price": "199000",
+      "price": "149000",
       "detail": "Detail",
-      "image": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171714/%C3%81O_THUN_HALF_FACE_cccpec.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171715/%C3%81O_THUN_HALF_FACE2_qb50lz.jpg",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996210/u5s2pemngyawysw0mm0u.webp",
       "id": 2
     },
     {
-      "name": "ÁO THUN SKELETON",
+      "name": "Have Fun Tee",
       "cate_id": "1",
-      "price": "249000",
+      "price": "149000",
       "detail": "detail",
-      "image": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171715/%C3%81O_THUN_SKELETON_bqgkxr.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171716/%C3%81O_THUN_SKELETON2_dkpau9.jpg",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996238/w3xyyj3pode8kf5jv9tu.jpg",
       "id": 3
     },
     {
@@ -51,7 +48,6 @@
       "price": "199000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996367/nw5zu7wiiynee6bmtu7i.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170409/%C3%81O_PH%C3%94NG_OVERSIZE_TRIPBLE_B2_g1dlim.jpg",
       "id": 4
     },
     {
@@ -60,7 +56,6 @@
       "price": "199000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996402/qnke04h1a3bes8vnllhg.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171395/%C3%81O_PH%C3%94NG_OVERSIZE_LIL_PUMP_k5b9yz.jpg",
       "id": 5
     },
     {
@@ -69,7 +64,6 @@
       "price": "249000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996500/mi88vkr5epsglth3m8xw.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170708/QU%E1%BA%A6N_D%C3%80I_LINE_BUTTONS_PANTS1_ydy8cj.jpg",
       "id": 6
     },
     {
@@ -78,7 +72,6 @@
       "price": "459000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997264/yiy6hc9j6haw4jkhrbtj.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170411/QU%E1%BA%A6N_D%C3%80I_RACING_PANTS2_nul6zd.jpg",
       "id": 7
     },
     {
@@ -87,7 +80,6 @@
       "price": "249000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997431/vgizvxqi2cfmlfvhcguy.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/QU%E1%BA%A6N_D%C3%80I_KAKI_BASIC2_uzkhr3.jpg",
       "id": 8
     },
     {
@@ -96,7 +88,6 @@
       "price": "300000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997563/sq83clmsy3vg0vmn5kmx.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171995/QU%E1%BA%A6N_D%C3%80I_WIDE_PANTS2_fyruvf.jpg",
       "id": 9
     },
     {
@@ -105,7 +96,6 @@
       "price": "249000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997667/ccgqzmebqnhiatiug1cc.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645172062/QU%E1%BA%A6N_D%C3%80I_BLACK_BUTTONS_PANTS2_eqb68m.jpg",
       "id": 10
     },
     {
@@ -114,7 +104,6 @@
       "price": "499000",
       "detail": "ÁO KHOÁC PARKA K.R",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997810/fh4n6cvthxemb3fo1axq.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170408/%C3%81O_KHO%C3%81C_PARKA_K.R2_kfqsi9.jpg",
       "id": 11
     },
     {
@@ -123,7 +112,6 @@
       "price": "379000",
       "detail": "ÁO KHOÁC KAKI",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997840/q09jniaeyj1f1azju9rd.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1644997714/ku8d7ubghywb2b2fszd5.jpg",
       "id": 12
     },
     {
@@ -132,7 +120,6 @@
       "price": "219000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997867/mp46wkoocnzvhqeyfvum.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170408/%C3%81O_HOODIE_JACKET_OVERSIZE_T%C3%9AI_H%E1%BB%98P2_jhjmul.jpg",
       "id": 13
     },
     {
@@ -141,7 +128,6 @@
       "price": "499000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997933/gvdfjx8q2llqrsopvz62.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170409/%C3%81O_KHO%C3%81C_MOUNTAIN_PARKA2_fmlzc1.jpg",
       "id": 14
     },
     {
@@ -150,7 +136,6 @@
       "price": "450000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997988/km8lvwzulluioqdtqzsy.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645172144/%C3%81O_KHO%C3%81C_DA_BIKER2_gtb73e.jpg",
       "id": 15
     },
     {
@@ -159,7 +144,6 @@
       "price": "79000",
       "detail": "MŨ LEN ADVENTURETIME",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998027/qvmj4ak2gygg8bnpaxpv.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/M%C5%A8_LEN_ADVENTURETIME2_q3itne.jpg",
       "id": 16
     },
     {
@@ -168,7 +152,6 @@
       "price": "79000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998152/pbmyn9wwbdckylysqmra.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/M%C5%A8_MIKIHAT2_xpb7ga.jpg",
       "id": 17
     },
     {
@@ -177,7 +160,6 @@
       "price": "99000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998180/d1ydn8yrtbbewmtel0rg.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/M%C5%A8_LEN_BEANI_HAT_DREW2_refjm9.jpg",
       "id": 18
     },
     {
@@ -186,7 +168,6 @@
       "price": "59000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998213/wwoxz2fq6sobqz2f76ao.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170409/M%C5%A8_LEAN_BEANI_HAT_BASIC2_yuyn0s.jpg",
       "id": 19
     },
     {
@@ -195,7 +176,6 @@
       "price": "219000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998288/voekt7u1948fumv54cat.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170411/T%C3%9AI_%C4%90EO_CH%C3%89O_DIAGONAL2_olmdqo.jpg",
       "id": 20
     },
     {
@@ -204,7 +184,6 @@
       "price": "149000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998356/juqwmnswnsh95v5mgq4o.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170409/KH%C4%82N_LEN_J.L_SCRAFT_u6zbg9.jpg",
       "id": 21
     }
   ],
