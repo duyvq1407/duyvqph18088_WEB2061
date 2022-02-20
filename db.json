@@ -24,17 +24,17 @@
       "cate_id": "1",
       "price": "185000",
       "detail": "Detail",
-      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645392697/t5f1jsye6e8rfk7bu3ld.jpg",
-      "image2": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645392592/rglfmbdy1cd9xlmocpeb.jpg"
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645395355/b2qed5p24uijtjv1llsp.jpg",
+      "image2": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645395367/ieyt8k4xsht2d52sjrpo.jpg"
     },
     {
+      "id": 2,
       "name": "ÁO THUN HALF FACE",
       "cate_id": "1",
       "price": "199000",
       "detail": "Detail",
-      "image": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171714/%C3%81O_THUN_HALF_FACE_cccpec.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171715/%C3%81O_THUN_HALF_FACE2_qb50lz.jpg",
-      "id": 2
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645395496/vgs65cfjhizbisxyvqob.jpg",
+      "image2": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645395522/jyarxskge1o2jl4nzwbz.jpg"
     },
     {
       "name": "ÁO THUN SKELETON",

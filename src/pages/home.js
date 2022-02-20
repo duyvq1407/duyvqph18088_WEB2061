@@ -1,13 +1,15 @@
 import { getAllProducts } from "../api/product";
 import Banner from "../components/banner";
+import Header from "../components/header";
 
 const HomePage = {
     async render() {
         const { data } = await getAllProducts();
         return /* html */`
-            <main class="mt-2">
+            <main>
+                ${await Header.render()}
                 ${Banner.render()}
-                <div class="max-w-5xl mx-auto sanphammoi">
+                <div class="max-w-6xl mx-auto sanphammoi">
                     <div class="sanphammoi_tiltle px-[40px] text-center pt-10">
                         <h2>
                             <a href="#">Sản phẩm mới</a>
