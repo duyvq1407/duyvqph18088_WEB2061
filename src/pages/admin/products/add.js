@@ -143,6 +143,7 @@ const AddProductPage = {
                 image: response.data.url,
                 image2: response2.data.url,
             });
+            document.location.href = "/admin/products";
         });
     },
 };

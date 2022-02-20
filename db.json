@@ -19,13 +19,13 @@
   ],
   "products": [
     {
+      "id": 1,
       "name": "ÁO THUN OVERSIZE WOOLEN HEAD",
       "cate_id": "1",
       "price": "185000",
-      "detail": "Detail1",
-      "image": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171714/%C3%81O_THUN_OVERSIZE_WOOLEN_HEAD_p6i5au.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645171715/%C3%81O_THUN_OVERSIZE_WOOLEN_HEAD2_eb647x.jpg",
-      "id": 1
+      "detail": "Detail",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645391677/zdtmchccaq81ajkapdjo.jpg",
+      "image2": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645391464/uvljdyu40hu9fbhmssvi.jpg"
     },
     {
       "name": "ÁO THUN HALF FACE",

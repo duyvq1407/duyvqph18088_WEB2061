@@ -1,3 +1,4 @@
+/* eslint-disable no-unneeded-ternary */
 /* eslint-disable max-len */
 import axios from "axios";
 // import { date } from "forms/lib/widgets";
@@ -74,7 +75,7 @@ const EditProductPage = {
                                                     <img src="${data.image2}" 
                                                     class="max-h-[70px] mx-auto" id="imgPreview2" />
                                                     <div class="flex text-sm text-gray-600">
-                                                        <input id="image2" name="image2" type="file" placeholder="">
+                                                        <input id="image2" name="image2" type="file">
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,18 +96,28 @@ const EditProductPage = {
     },
     async afterRender(id) {
         let linkImg;
+        let linkImg2;
         const formEdit = document.querySelector("#form-edit-product");
-        const imgPost = document.querySelector("#file-upload");
+        const imgPost = document.querySelector("#image");
+        const imgPost2 = document.querySelector("#image2");
+        const imgPreview = document.querySelector("#imgPreview");
+        const imgPreview2 = document.querySelector("#imgPreview2");
 
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/duyvqph18088/image/upload";
         const CLOUDINARY_PRESET = "y12jh0jj";
 
+        imgPost.addEventListener("change", (e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
+        imgPost2.addEventListener("change", (e) => {
+            imgPreview2.src = URL.createObjectURL(e.target.files[0]);
+        });
+
         formEdit.addEventListener("submit", async (e) => {
             e.preventDefault();
-            if (imgPost.files[0]) {
-                // Lấy giá trị input file
-                const file = imgPost.files[0];
-
+            // Lấy giá trị input file
+            const file = imgPost.files[0];
+            if (file) {
                 // append vào object formData
                 const formData = new FormData();
                 formData.append("file", file);
@@ -119,8 +130,21 @@ const EditProductPage = {
                     },
                 });
                 linkImg = response.data.url;
-            } else {
-                linkImg = (await getProduct(id)).data.image;
+            }
+            // Lấy giá trị input file
+            const file2 = imgPost2.files[0];
+            if (file2) {
+                const formData2 = new FormData();
+                formData2.append("file", file2);
+                formData2.append("upload_preset", CLOUDINARY_PRESET);
+
+                // call api cloudinary
+                const response2 = await axios.post(CLOUDINARY_API, formData2, {
+                    headers: {
+                        "Content-Type": "application/form-data",
+                    },
+                });
+                linkImg2 = response2.data.url;
             }
             updateProduct({
                 id,
@@ -128,9 +152,9 @@ const EditProductPage = {
                 cate_id: document.querySelector("#cate_Id").value,
                 price: document.querySelector("#price-product").value,
                 detail: document.querySelector("#detail-product").value,
-                image: linkImg,
+                image: linkImg ? linkImg : imgPreview.src,
+                image2: linkImg2 ? linkImg2 : imgPreview2.src,
             });
-            document.location.href = "/admin/products";
         });
     },
 };
