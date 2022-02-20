@@ -1,5 +1,8 @@
+import { getAllCategories } from "../api/categories";
+
 const NavBar = {
-    render() {
+    async render() {
+        const { data } = await getAllCategories();
         return /* html */`
             <div class="header fixed top-8 left-0 right-0 z-50 h-[70px] shadow-lg">
                 <div class="header_container bg-[#fff] z-1">
@@ -23,10 +26,9 @@ const NavBar = {
                                                     </svg>
                                                 </a>
                                                 <ul>
-                                                    <li><a href="#">Tee | Áo thun</a></li>
-                                                    <li><a href="#">Pant | Quần</a></li>
-                                                    <li><a href="#">Jacket | Áo khoác</a></li>
-                                                    <li><a href="#">Accessories | Phụ kiện</a></li>
+                                                    ${data.map((category) => `
+                                                        <li><a href="#">${category.name}</a></li>
+                                                    `)}
                                                 </ul>
                                             </li>
                                             <li><a href="#">Blog</a></li>

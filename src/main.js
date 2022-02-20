@@ -14,7 +14,7 @@ import EditProductPage from "./pages/admin/products/edit";
 const router = new Navigo("/", { linksSelector: "a" });
 export default router;
 const print = async (content, id) => {
-    document.querySelector("#header").innerHTML = Header.render();
+    document.querySelector("#header").innerHTML = await Header.render();
     document.querySelector("#app").innerHTML = await content.render(id);
     document.querySelector("#footer").innerHTML = Footer.render();
     if (content.afterRender) content.afterRender(id);

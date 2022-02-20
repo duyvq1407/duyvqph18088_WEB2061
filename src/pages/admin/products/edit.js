@@ -155,6 +155,7 @@ const EditProductPage = {
                 image: linkImg ? linkImg : imgPreview.src,
                 image2: linkImg2 ? linkImg2 : imgPreview2.src,
             });
+            document.location.href = "/admin/products";
         });
     },
 };
