@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import axios from "axios";
-import { date } from "forms/lib/widgets";
+// import { date } from "forms/lib/widgets";
 import { getAllCategories } from "../../../api/categories";
 import { getProduct, updateProduct } from "../../../api/product";
 import HeaderAdmin from "../../../components/header_admin";
