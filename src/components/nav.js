@@ -28,7 +28,7 @@ const NavBar = {
                                                 <ul>
                                                     ${data.map((category) => `
                                                         <li><a href="#">${category.name}</a></li>
-                                                    `)}
+                                                    `).join("")}
                                                 </ul>
                                             </li>
                                             <li><a href="#">Blog</a></li>

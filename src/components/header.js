@@ -4,10 +4,10 @@ import NavBar from "./nav";
 import PromoBar from "./promo-bar";
 
 const Header = {
-    render() {
+    async render() {
         return /* html */`
             ${PromoBar.render()}
-            ${NavBar.render()}
+            ${await NavBar.render()}
         `;
     },
 };
