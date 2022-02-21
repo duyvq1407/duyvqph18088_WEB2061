@@ -1,5 +1,8 @@
 import axios from "axios";
+import toastr from "toastr";
 import HeaderAdmin from "../../../components/header_admin";
+import "toastr/build/toastr.min.css";
+import { addCategory } from "../../../api/categories";
 
 const AddCategoriesPage = {
     render() {
@@ -50,13 +53,16 @@ const AddCategoriesPage = {
 
         formAdd.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const dataFake = {
+            addCategory({
                 name: document.querySelector("#name-cate").value,
-            };
-
+            });
             // call api thêm bài viết
             axios.post("http://localhost:3001/categories", dataFake);
         });
+        toastr.success("Sửa sản phẩm thành công");
+        setTimeout(() => {
+            document.location.href = "/admin/products";
+        }, 3000);
     },
 };
 export default AddCategoriesPage;

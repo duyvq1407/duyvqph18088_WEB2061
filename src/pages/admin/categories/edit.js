@@ -1,5 +1,7 @@
+import toastr from "toastr";
 import { getCategory, updateCategory } from "../../../api/categories";
 import HeaderAdmin from "../../../components/header_admin";
+import "toastr/build/toastr.min.css";
 
 const EditCategoryPage = {
     async render(id) {
@@ -54,7 +56,10 @@ const EditCategoryPage = {
                 id,
                 name: document.querySelector("#name-cate").value,
             });
-            // axios.post('https://5e79b4b817314d00161333da.mockapi.io/posts', postFake)
+            toastr.success("Sửa sản phẩm thành công");
+            setTimeout(() => {
+                document.location.href = "/admin/products";
+            }, 3000);
         });
     },
 };

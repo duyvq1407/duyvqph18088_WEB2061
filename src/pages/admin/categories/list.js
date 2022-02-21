@@ -1,5 +1,9 @@
+/* eslint-disable no-alert */
+import toastr from "toastr";
 import { getAllCategories, removeCategory } from "../../../api/categories";
 import HeaderAdmin from "../../../components/header_admin";
+import "toastr/build/toastr.min.css";
+import { reRender } from "../../../../utils";
 
 const listCatePage = {
     async render() {
@@ -56,19 +60,19 @@ const listCatePage = {
         `;
     },
     afterRender() {
-        // lấy toàn bộ button thông qua class
-        const buttons = document.querySelectorAll(".btn");
-        // lấy từng button
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                // lấy ID thông qua thuộc tính data-id ở button
-                const { id } = button.dataset;
-                // eslint-disable-next-line no-alert
-                const confirm = window.confirm("May co chac chan muon xoa khong???");
+        // Lấy toàn bộ button có class .btn
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach((buttonElement) => {
+            // lấy id button thông qua thuộc tính data-id
+            const { id } = buttonElement.dataset;
+            buttonElement.addEventListener("click", () => {
+                // Xoa phan tu trong mang dua tren ID
+                const confirm = window.confirm("Bạn có muốn xóa hay không?");
                 if (confirm) {
-                    // call api
-                    // eslint-disable-next-line no-alert
-                    removeCategory(id).then(() => alert("Da xoa thanh cong"));
+                    // call api xóa
+                    removeCategory(id)
+                        .then(() => toastr.success("Bạn đã xóa thành công"))
+                        .then(() => reRender(listCatePage, "#app"));
                 }
             });
         });
