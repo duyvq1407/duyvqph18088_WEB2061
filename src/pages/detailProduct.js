@@ -90,6 +90,7 @@ const DetailProductPage = {
                     `).join("")}
                 </div>
             </div>
+            ${}
         `;
     },
 };

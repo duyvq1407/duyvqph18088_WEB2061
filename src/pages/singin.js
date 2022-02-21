@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import toastr from "toastr";
 import { signin } from "../api/user";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 const SignInPage = {
@@ -73,6 +74,7 @@ const SignInPage = {
                     </div>
                 </div>
             </div>
+            ${await Footer.render()}
         `;
     },
     afterRender() {

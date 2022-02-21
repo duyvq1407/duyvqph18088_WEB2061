@@ -1,5 +1,6 @@
 import { getAllProducts } from "../api/product";
 import Banner from "../components/banner";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 const HomePage = {
@@ -44,6 +45,7 @@ const HomePage = {
                     </div>
                 </div>
             </main>
+            ${await Footer.render()}
         `;
     },
 };

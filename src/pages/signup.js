@@ -1,4 +1,5 @@
 import { signup } from "../api/user";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 const Signup = {
@@ -56,6 +57,7 @@ const Signup = {
                     </div>
                 </div>
             </div>
+            ${await Footer.render()}
         `;
     },
     afterRender() {
