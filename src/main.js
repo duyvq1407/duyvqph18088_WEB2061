@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
 import Navigo from "navigo";
 import "../style.css";
 import Footer from "./components/footer";

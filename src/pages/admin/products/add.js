@@ -1,4 +1,6 @@
 import axios from "axios";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import HeaderAdmin from "../../../components/header_admin";
 import { getAllCategories } from "../../../api/categories";
 import { addProduct } from "../../../api/product";
@@ -143,7 +145,10 @@ const AddProductPage = {
                 image: response.data.url,
                 image2: response2.data.url,
             });
-            document.location.href = "/admin/products";
+            toastr.success("Thêm sản phẩm thành công");
+            setTimeout(() => {
+                document.location.href = "/admin/products";
+            }, 3000);
         });
     },
 };

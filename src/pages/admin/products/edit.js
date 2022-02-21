@@ -156,8 +156,10 @@ const EditProductPage = {
                 image: linkImg ? linkImg : imgPreview.src,
                 image2: linkImg2 ? linkImg2 : imgPreview2.src,
             });
-            toastr.success("Thêm sản phẩm thành công");
-            document.location.href = "/admin/products";
+            toastr.success("Sửa sản phẩm thành công");
+            setTimeout(() => {
+                document.location.href = "/admin/products";
+            }, 3000);
         });
     },
 };

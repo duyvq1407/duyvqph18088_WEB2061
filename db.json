@@ -206,6 +206,15 @@
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998356/juqwmnswnsh95v5mgq4o.jpg",
       "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170409/KH%C4%82N_LEN_J.L_SCRAFT_u6zbg9.jpg",
       "id": 21
+    },
+    {
+      "name": "2345",
+      "cate_id": "3",
+      "price": "12345",
+      "detail": "123456",
+      "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645431750/fsmcxmiobhsuzu76csdj.jpg",
+      "image2": "http://res.cloudinary.com/duyvqph18088/image/upload/v1645431753/zye6kzhjphcvsnnyewxx.jpg",
+      "id": 22
     }
   ],
   "orders": [
