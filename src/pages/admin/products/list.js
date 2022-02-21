@@ -1,4 +1,7 @@
 /* eslint-disable no-alert */
+import toastr from "toastr";
+import { reRender } from "../../../../utils";
+import "toastr/build/toastr.min.css";
 import { getAllProducts, removeProduct } from "../../../api/product";
 import HeaderAdmin from "../../../components/header_admin";
 
@@ -9,12 +12,12 @@ const listProductPage = {
             ${HeaderAdmin.render()}
             <header class="bg-white shadow mb-5">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                <h1 class="text-3xl font-bold text-gray-900">News</h1>
+                <h1 class="text-3xl font-bold text-gray-900">Product</h1>
                 <a href="/admin/products/add" class="text-indigo-600 hover:text-indigo-900 block">Add Product</a>
             </div>
             </header>
             <div class="flex flex-col max-w-7xl mx-auto">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200">
@@ -83,21 +86,23 @@ const listProductPage = {
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         `;
     },
     afterRender() {
-        // lấy toàn bộ button thông qua class
-        const buttons = document.querySelectorAll(".btn");
-        // lấy từng button
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                // lấy ID thông qua thuộc tính data-id ở button
-                const { id } = button.dataset;
-                const confirm = window.confirm("May co chac chan muon xoa khong???");
+        // Lấy toàn bộ button có class .btn
+        const btns = document.querySelectorAll(".btn");
+        btns.forEach((buttonElement) => {
+            // lấy id button thông qua thuộc tính data-id
+            const { id } = buttonElement.dataset;
+            buttonElement.addEventListener("click", () => {
+                // Xoa phan tu trong mang dua tren ID
+                const confirm = window.confirm("Bạn có muốn xóa hay không?");
                 if (confirm) {
-                    // call api
-                    removeProduct(id).then(() => alert("Da xoa thanh cong"));
+                    // call api xóa
+                    removeProduct(id)
+                        .then(() => toastr.success("Bạn đã xóa thành công"))
+                        .then(() => reRender(listProductPage, "#app"));
                 }
             });
         });

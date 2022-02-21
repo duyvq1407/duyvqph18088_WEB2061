@@ -1,7 +1,8 @@
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable max-len */
 import axios from "axios";
-// import { date } from "forms/lib/widgets";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import { getAllCategories } from "../../../api/categories";
 import { getProduct, updateProduct } from "../../../api/product";
 import HeaderAdmin from "../../../components/header_admin";
@@ -155,6 +156,7 @@ const EditProductPage = {
                 image: linkImg ? linkImg : imgPreview.src,
                 image2: linkImg2 ? linkImg2 : imgPreview2.src,
             });
+            toastr.success("Thêm sản phẩm thành công");
             document.location.href = "/admin/products";
         });
     },
