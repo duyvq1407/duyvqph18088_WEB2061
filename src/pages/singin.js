@@ -87,14 +87,19 @@ const SignInPage = {
                     email: document.querySelector("#email").value,
                     password: document.querySelector("#password").value,
                 });
-                localStorage.setItem("user", JSON.stringify(data.user));
-                if (data.user.id == 1) {
-                    document.location.href = "/admin/products";
-                } else {
-                    document.location.href = "/";
+                if (data) {
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    toastr.success("Đăng nhập thành công");
+                    setTimeout(() => {
+                        if (data.user.id === 1) {
+                            document.location.href = "/admin/products";
+                        } else {
+                            document.location.href = "/";
+                        }
+                    }, 2000);
                 }
             } catch (error) {
-                console.log(error.response.data);
+                toastr.error(error.response.data);
             }
         });
     },
