@@ -10,6 +10,7 @@ import listProductPage from "./pages/admin/products/list";
 import Dashboard from "./pages/admin/dashboard";
 import EditProductPage from "./pages/admin/products/edit";
 import ProductPage from "./pages/product";
+import DetailProductPage from "./pages/detailProduct";
 
 const router = new Navigo("/", { linksSelector: "a" });
 export default router;
@@ -24,6 +25,9 @@ router.on({
     },
     "/products/:id": ({ data }) => {
         print(ProductPage, data.id);
+    },
+    "/product/:id": ({ data }) => {
+        print(DetailProductPage, data.id);
     },
     "/admin/": () => {
         print(Dashboard);

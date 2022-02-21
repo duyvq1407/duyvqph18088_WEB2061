@@ -311,4 +311,9 @@ a:hover{
 }
 
 
-
+/* ==========detail page=========== */
+.form-group-size label.active {
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+}

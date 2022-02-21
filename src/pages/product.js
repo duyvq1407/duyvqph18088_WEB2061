@@ -11,7 +11,7 @@ const ProductPage = {
                 ${await Header.render()}
                 <div class="dieuhuong bg-[#f5f5f5] mt-[130px] mb-6">
                     <div class="max-w-6xl text-left mx-auto">
-                        <p class="py-4 text-black leading-6">Trang chủ / Danh mục / <span style="color: #777;">${cateName}</span></p>
+                        <p class="py-4 text-black leading-6 text-[14px]">Trang chủ / Danh mục / <span style="color: #777;">${cateName}</span></p>
                     </div>
                 </div>
                 <div class="max-w-6xl mx-auto grid grid-cols-3">
@@ -35,7 +35,7 @@ const ProductPage = {
                                 <div class="pro-loop">
                                     <div class="product">
                                         <div class="product_img">
-                                            <a href="#">
+                                            <a href="/product/${product.id}">
                                                 <div class="figure">
                                                     <img src="${product.image}" width="100%">
                                                     <img src="${product.image2}" class="image-hover">
@@ -44,7 +44,7 @@ const ProductPage = {
                                         </div>
                                         <div class="product_detail">
                                             <h3 class="product_detail-name">
-                                                <a href="#">${product.name}</a>
+                                                <a href="/product/${product.id}">${product.name}</a>
                                             </h3>
                                             <div class="product_detail-price font-bold text-black">
                                                 <p>${new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(product.price)}</p>

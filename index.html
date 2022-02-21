@@ -22,6 +22,19 @@
             $('.header').removeClass('scrolled');
         }
     });
+    function selectSize() {
+        var listSize = document.getElementsByName('size');
+        console.dir(listSize);
+        for (i = 0; i < listSize.length; i++) {
+            if (listSize[i].checked) {
+                document.getElementsByClassName('label_for_size')[i].classList.add('active');
+            } else {
+                document.getElementsByClassName('label_for_size')[i].classList.remove('active');
+            }
+
+        }
+    }
+    selectSize();
     </script>
   </body>
 </html>
