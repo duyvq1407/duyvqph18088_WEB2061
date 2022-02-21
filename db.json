@@ -1,20 +1,20 @@
 {
   "categories": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Tee | Áo thun"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Pant | Quần"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Jacket | Áo khoác"
     },
     {
       "name": "Accessories | Phụ kiện",
-      "id": "4"
+      "id": 4
     }
   ],
   "products": [
@@ -109,22 +109,22 @@
       "id": 10
     },
     {
+      "id": 11,
       "name": "ÁO KHOÁC PARKA K.R",
       "cate_id": "3",
       "price": "499000",
-      "detail": "ÁO KHOÁC PARKA K.R",
+      "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997810/fh4n6cvthxemb3fo1axq.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170408/%C3%81O_KHO%C3%81C_PARKA_K.R2_kfqsi9.jpg",
-      "id": 11
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170408/%C3%81O_KHO%C3%81C_PARKA_K.R2_kfqsi9.jpg"
     },
     {
+      "id": 12,
       "name": "ÁO KHOÁC KAKI ",
       "cate_id": "3",
       "price": "379000",
-      "detail": "ÁO KHOÁC KAKI",
+      "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997840/q09jniaeyj1f1azju9rd.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1644997714/ku8d7ubghywb2b2fszd5.jpg",
-      "id": 12
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1644997714/ku8d7ubghywb2b2fszd5.jpg"
     },
     {
       "name": "ÁO HOODIE JACKET OVERSIZE TÚI HỘP",
@@ -154,13 +154,13 @@
       "id": 15
     },
     {
+      "id": 16,
       "name": "MŨ LEN ADVENTURETIME",
       "cate_id": "4",
       "price": "79000",
-      "detail": "MŨ LEN ADVENTURETIME",
+      "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998027/qvmj4ak2gygg8bnpaxpv.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/M%C5%A8_LEN_ADVENTURETIME2_q3itne.jpg",
-      "id": 16
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/M%C5%A8_LEN_ADVENTURETIME2_q3itne.jpg"
     },
     {
       "name": "MŨ MIKIHAT",
@@ -190,13 +190,13 @@
       "id": 19
     },
     {
+      "id": 20,
       "name": "TÚI ĐEO CHÉO DIAGONAL",
       "cate_id": "4",
       "price": "219000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644998288/voekt7u1948fumv54cat.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170411/T%C3%9AI_%C4%90EO_CH%C3%89O_DIAGONAL2_olmdqo.jpg",
-      "id": 20
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170411/T%C3%9AI_%C4%90EO_CH%C3%89O_DIAGONAL2_olmdqo.jpg"
     },
     {
       "name": "KHĂN LEN J.L SCRAFT",

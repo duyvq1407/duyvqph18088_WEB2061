@@ -56,9 +56,9 @@ const EditCategoryPage = {
                 id,
                 name: document.querySelector("#name-cate").value,
             });
-            toastr.success("Sửa sản phẩm thành công");
+            toastr.success("Sửa thành công");
             setTimeout(() => {
-                document.location.href = "/admin/products";
+                document.location.href = "/admin/categories";
             }, 3000);
         });
     },

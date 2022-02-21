@@ -1,4 +1,3 @@
-import axios from "axios";
 import toastr from "toastr";
 import HeaderAdmin from "../../../components/header_admin";
 import "toastr/build/toastr.min.css";
@@ -56,13 +55,11 @@ const AddCategoriesPage = {
             addCategory({
                 name: document.querySelector("#name-cate").value,
             });
-            // call api thêm bài viết
-            axios.post("http://localhost:3001/categories", dataFake);
+            toastr.success("Thêm thành công");
+            setTimeout(() => {
+                document.location.href = "/admin/categories";
+            }, 3000);
         });
-        toastr.success("Sửa sản phẩm thành công");
-        setTimeout(() => {
-            document.location.href = "/admin/products";
-        }, 3000);
     },
 };
 export default AddCategoriesPage;
