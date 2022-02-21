@@ -80,13 +80,19 @@ const SignInPage = {
         formSignin.addEventListener("submit", async (e) => {
             e.preventDefault();
             try {
-                const data = await signin({
+            // call api
+                const { data } = await signin({
                     email: document.querySelector("#email").value,
                     password: document.querySelector("#password").value,
                 });
-                console.log(data);
+                localStorage.setItem("user", JSON.stringify(data.user));
+                if (data.user.id == 1) {
+                    document.location.href = "/admin/products";
+                } else {
+                    document.location.href = "/";
+                }
             } catch (error) {
-                console.log(error);
+                console.log(error.response.data);
             }
         });
     },
