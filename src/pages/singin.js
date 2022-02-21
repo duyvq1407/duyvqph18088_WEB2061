@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import toastr from "toastr";
 import { signin } from "../api/user";
+import "toastr/build/toastr.min.css";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
