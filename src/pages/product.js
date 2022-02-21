@@ -55,9 +55,9 @@ const ProductPage = {
                                 </div>
                             `).join("")}
                         </div>
-                    </div>
-                    ${await Footer.render()}                    
+                    </div>                   
                 </div>
+                    ${await Footer.render()} 
                  `;
     },
 };

@@ -1,5 +1,6 @@
 import { getCategory } from "../api/categories";
 import { getProduct, getProductsByCateId } from "../api/product";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 const DetailProductPage = {
@@ -90,7 +91,7 @@ const DetailProductPage = {
                     `).join("")}
                 </div>
             </div>
-            ${}
+            ${await Footer.render()}
         `;
     },
 };
