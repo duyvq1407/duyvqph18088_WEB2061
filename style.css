@@ -317,3 +317,24 @@ a:hover{
     background: #000;
     color: #fff;
 }
+/* ------------------------- */
+
+/* Zoom ảnh khi hover */
+.img-zoom{ 
+	height: auto;
+	margin: 10px auto; 
+	overflow: hidden;
+	position: relative;
+    width: 100%;
+} 
+	
+.img-zoom img { 
+	width: 100%;
+	transition: all 2s ease-in-out; 
+}
+	
+.img-zoom:hover img,.bosuutap_block:hover .img-zoom img { 
+	-webkit-transform: scale(1.2); 
+    transform: scale(1.2); 
+}
+/* --------------------- */

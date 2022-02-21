@@ -226,5 +226,19 @@
       "unit_price": "",
       "order_id": "1"
     }
+  ],
+  "users": [
+    {
+      "email": "duyvqph18088@fpt.edu.vn",
+      "password": "$2a$10$VKqsMVWTPOC8CzJeA7w1H.D8n8flf0W/l1pczpPN1GpF5JiAtfE6e",
+      "username": "duy12345",
+      "id": 1
+    },
+    {
+      "email": "vduy2350@gmail.com",
+      "password": "$2a$10$38UdBC1Rm4TJK.RE8uA5PO8ZDD40EEYecJrVX3wdNiR2/GCXRNDA.",
+      "username": "duy123",
+      "id": 2
+    }
   ]
 }

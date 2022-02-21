@@ -11,6 +11,8 @@ import Dashboard from "./pages/admin/dashboard";
 import EditProductPage from "./pages/admin/products/edit";
 import ProductPage from "./pages/product";
 import DetailProductPage from "./pages/detailProduct";
+import Signup from "./pages/signup";
+import SignInPage from "./pages/singin";
 
 const router = new Navigo("/", { linksSelector: "a" });
 export default router;
@@ -22,6 +24,12 @@ const print = async (content, id) => {
 router.on({
     "/": () => {
         print(HomePage);
+    },
+    "/signin": () => {
+        print(SignInPage);
+    },
+    "/signup": () => {
+        print(Signup);
     },
     "/products/:id": ({ data }) => {
         print(ProductPage, data.id);
