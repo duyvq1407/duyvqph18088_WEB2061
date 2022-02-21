@@ -6,38 +6,37 @@ const NavBar = {
         return /* html */`
             <div class="header fixed top-8 left-0 right-0 z-50 h-[70px] shadow-lg">
                 <div class="header_container bg-[#fff] z-1">
-                    <div class="container m-auto max-w-6xl">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="header_content h-[130px] transition-all duration-300 flex flex-row items-center justify-start">
-                                    <div class="logo"><a href="#"><img class="h-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1280px-Disney_wordmark.svg.png"></a></div>
-                                    <nav class="main_nav ml-[130px]">
-                                        <div class="close_menu">
-                                            <i class="fas fa-times" onclick="closeMenu()"></i>
-                                        </div>
-                                        <ul>
-                                            <li class="main_nav-item active">
-                                                <a href="/">Trang chủ</a>
-                                            </li>
-                                            <li class="main_nav-item" onclick="openListLink()">
-                                                <a href="/" class="flex items-center" aria-readonly="true">Sản phẩm
-                                                    <svg aria-hidden="true" class="duration-500 ease-in-out transition-all fa-chevron-down h-[14px] ml-1" viewBox="0 0 448 512">
-                                                        <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
-                                                    </svg>
-                                                </a>
-                                                <ul>
-                                                    ${data.map((category) => `
-                                                        <li><a href="/products/${category.id}">${category.name}</a></li>
-                                                    `).join("")}
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Giới thiệu</a></li>
-                                            <li><a href="#">Liên hệ</a></li>
-                                        </ul>
-                                    </nav>
+                    <div class="container m-auto max-w-6xl grid grid-cols-12 flex items-center">
+                        <div class="col-span-11 header_content h-[130px] transition-all duration-300 flex flex-row items-center justify-start">
+                            <div class="logo"><a href="#"><img class="h-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1280px-Disney_wordmark.svg.png"></a></div>
+                            <nav class="main_nav ml-[130px]">
+                                <div class="close_menu">
+                                    <i class="fas fa-times" onclick="closeMenu()"></i>
                                 </div>
-                            </div>
+                                <ul>
+                                    <li class="main_nav-item active">
+                                        <a href="/">Trang chủ</a>
+                                    </li>
+                                    <li class="main_nav-item" onclick="openListLink()">
+                                        <a href="/" class="flex items-center" aria-readonly="true">Sản phẩm
+                                            <svg aria-hidden="true" class="duration-500 ease-in-out transition-all fa-chevron-down h-[14px] ml-1" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                                            </svg>
+                                        </a>
+                                        <ul>
+                                            ${data.map((category) => `
+                                                <li><a href="/products/${category.id}">${category.name}</a></li>
+                                            `).join("")}
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Giới thiệu</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-span-1">
+                            <a href="/signin" class="text-base font-semibold text-[#767676]">Đăng nhập</a>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-console */
+import toastr from "toastr";
 import { signin } from "../api/user";
 import Header from "../components/header";
 
@@ -20,13 +23,13 @@ const SignInPage = {
                                     <div class="grid grid-cols-12 gap-6">
                                         <div class="col-span-12">
                                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                            <input type="text" name="email" id="email" autocomplete="email"
+                                            <input type="text" required name="email" id="email" autocomplete="email"
                                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                         </div>
                                         <div class="col-span-12">
                                             <label for="password"
                                                 class="block text-sm font-medium text-gray-700">Mật khẩu</label>
-                                            <input type="text" name="password" id="password" autocomplete="password"
+                                            <input type="password" required name="password" id="password" autocomplete="password"
                                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                         </div>
                                     </div>
