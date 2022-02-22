@@ -38,21 +38,26 @@ const NavBar = {
                         <div class="col-span-1 flex justify-between">
                             <a href="/signin" Id="cart"><img src="https://cdn-icons.flaticon.com/png/128/665/premium/665865.png?token=exp=1645441308~hmac=66538ff3e8236beb94b2c794b69e40ea" style="width: 18px; height: 18px" ></a>
                             <a href="/signin" Id="account"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" style="width: 18px; height: 18px"></a>
-                            <a href="/signin" Id="search"><img src="https://cdn-icons.flaticon.com/png/128/3031/premium/3031293.png?token=exp=1645441456~hmac=cf28fbb3e1b4851e44263ec4cd087642" style="width: 18px; height: 18px"></a>
+                            <button><img Id="search" onclick="openSearchPanel()" src="https://cdn-icons.flaticon.com/png/128/3031/premium/3031293.png?token=exp=1645441456~hmac=cf28fbb3e1b4851e44263ec4cd087642" style="width: 18px; height: 18px"></button>
                         </div>
                     </div>
                 </div>
-                <div class="search_panel">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
-                                    <form action="">
-                                        <input type="text" class="search_input" placeholder="Tìm kiếm...">
-                                        <button class="btn btn-dark" name="btn_search" style="height: 40px;">Tìm kiếm</button>
-                                    </form>
-                                </div>
-                            </div>
+                <style>
+                    #search_panel.active {
+                        bottom: 0px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                </style>
+                <div id="search_panel" class="bottom-9 opacity-0 relative left-0 w-[100%] bg-[#e4e4e4] -z-10 duration-500">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="search_panel_content flex flex-row items-center justify-end">
+                            <form action="">
+                                <input type="text" class="search_input" placeholder="Tìm kiếm...">
+                                <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Tìm kiếm
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

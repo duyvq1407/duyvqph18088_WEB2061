@@ -76,7 +76,7 @@ const Signup = {
                 });
                 toastr.success("Đăng ký thành công");
                 setTimeout(() => {
-                    document.location.href = "/account";
+                    document.location.href = "/signin";
                 }, 2000);
             } catch (error) {
                 toastr.error(error.response.data);

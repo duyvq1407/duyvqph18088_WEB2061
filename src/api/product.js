@@ -9,7 +9,8 @@ export const getProduct = (id) => {
     return instance.get(url);
 };
 export const getProductsByCateId = (cateId) => {
-    const url = `/products?cate_id=${cateId}`;
+    const url = `products?cate_id=${cateId}&author=typicode`;
+    // const url = `/products?cate_id=${cateId}`;
     return instance.get(url);
 };
 export const addProduct = (product) => {

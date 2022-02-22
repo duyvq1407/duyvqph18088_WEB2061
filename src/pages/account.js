@@ -32,7 +32,8 @@ const AccountPage = {
         `;
     },
     afterRender() {
-        const logout = document.querySelector("#logout"); logout.addEventListener("click", () => {
+        const logout = document.querySelector("#logout");
+        logout.addEventListener("click", () => {
             localStorage.removeItem("user");
             toastr.success("Đăng xuất thành công");
             setTimeout(() => {
