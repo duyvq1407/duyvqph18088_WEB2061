@@ -1,4 +1,5 @@
 import { getAllCategories } from "../api/categories";
+import { searchProduct } from "../api/product";
 
 const NavBar = {
     async render() {
@@ -52,8 +53,8 @@ const NavBar = {
                 <div id="search_panel" class="bottom-9 opacity-0 relative left-0 w-[100%] bg-[#e4e4e4] -z-10 duration-500">
                     <div class="max-w-6xl mx-auto">
                         <div class="search_panel_content flex flex-row items-center justify-end">
-                            <form action="">
-                                <input type="text" class="search_input" placeholder="Tìm kiếm...">
+                            <form action="" id="form_search">
+                                <input type="text" id="search_input" class="search_input" placeholder="Tìm kiếm...">
                                 <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         Tìm kiếm
                                 </button>
@@ -69,6 +70,18 @@ const NavBar = {
         if (JSON.parse(localStorage.getItem("user"))) {
             account.href = "/account";
         }
+        const formSearch = document.querySelector("#form_search");
+        const searchinput = document.querySelector("#search_input");
+        formSearch.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const { data } = await searchProduct(searchinput.value);
+            if (data) {
+                localStorage.setItem("search", JSON.stringify(data));
+            }
+            setTimeout(() => {
+                document.location.href = "/search";
+            }, 500);
+        });
     },
 };
 export default NavBar;
