@@ -15,12 +15,15 @@ import ProductPage from "./pages/product";
 import DetailProductPage from "./pages/detailProduct";
 import Signup from "./pages/signup";
 import SignInPage from "./pages/singin";
+import AccountPage from "./pages/account";
+import Header from "./components/header";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 export default router;
 const print = async (content, id) => {
     document.querySelector("#app").innerHTML = await content.render(id);
     if (content.afterRender) content.afterRender(id);
+    Header.afterRender();
 };
 router.on("/admin/*", () => {}, {
     before(done, match) {
@@ -42,6 +45,9 @@ router.on({
     },
     "/signin": () => {
         print(SignInPage);
+    },
+    "/account": () => {
+        print(AccountPage);
     },
     "/signup": () => {
         print(Signup);

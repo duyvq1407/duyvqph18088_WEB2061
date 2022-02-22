@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable max-len */
 import axios from "axios";
@@ -10,8 +11,7 @@ import HeaderAdmin from "../../../components/header_admin";
 const EditProductPage = {
     async render(id) {
         const { data } = await getProduct(id);
-        const categories = await getAllCategories;
-        console.log((await getAllCategories).data);
+        const categories = (await getAllCategories()).data;
         return /* html */`
             ${HeaderAdmin.render()}
             <header class="bg-white shadow mb-5">
@@ -44,7 +44,7 @@ const EditProductPage = {
                                             <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
                                             <select id="cate_Id" name="category" autocomplete="category-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                                 ${categories.map((category) => `
-                                                    <option value="${category.id}" ${data.cate_id === category.id ? "selected" : ""} >${category.name}</option>
+                                                    <option value="${category.id}" ${data.cate_id == category.id ? "selected" : ""} >${category.name}</option>
                                                 `).join("")}
                                             </select>
                                         </div>

@@ -64,13 +64,13 @@
       "id": 5
     },
     {
+      "id": 6,
       "name": "Quần dài Line Buttons Pants",
       "cate_id": "2",
       "price": "249000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644996500/mi88vkr5epsglth3m8xw.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170708/QU%E1%BA%A6N_D%C3%80I_LINE_BUTTONS_PANTS1_ydy8cj.jpg",
-      "id": 6
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170708/QU%E1%BA%A6N_D%C3%80I_LINE_BUTTONS_PANTS1_ydy8cj.jpg"
     },
     {
       "name": "QUẦN DÀI RACING PANTS",
@@ -82,13 +82,13 @@
       "id": 7
     },
     {
+      "id": 8,
       "name": "QUẦN DÀI KAKI BASIC",
       "cate_id": "2",
       "price": "249000",
       "detail": "detail",
       "image": "http://res.cloudinary.com/duyvqph18088/image/upload/v1644997431/vgizvxqi2cfmlfvhcguy.jpg",
-      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/QU%E1%BA%A6N_D%C3%80I_KAKI_BASIC2_uzkhr3.jpg",
-      "id": 8
+      "image2": "https://res.cloudinary.com/duyvqph18088/image/upload/v1645170410/QU%E1%BA%A6N_D%C3%80I_KAKI_BASIC2_uzkhr3.jpg"
     },
     {
       "name": "QUẦN DÀI WIDE PANTS",
@@ -239,6 +239,12 @@
       "password": "$2a$10$38UdBC1Rm4TJK.RE8uA5PO8ZDD40EEYecJrVX3wdNiR2/GCXRNDA.",
       "username": "duy123",
       "id": 2
+    },
+    {
+      "email": "ADMIN@GMAIL.COM",
+      "password": "$2a$10$SytDjo.zsSK7WpWR78lYqedTuqZJ.tZJb.P6Ao3jieNcYX57vXpIS",
+      "username": "123456",
+      "id": 3
     }
   ]
 }

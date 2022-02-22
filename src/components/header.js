@@ -1,5 +1,3 @@
-// import { menu } from "../data";
-
 import NavBar from "./nav";
 import PromoBar from "./promo-bar";
 
@@ -9,6 +7,9 @@ const Header = {
             ${PromoBar.render()}
             ${await NavBar.render()}
         `;
+    },
+    afterRender() {
+        NavBar.afterRender();
     },
 };
 export default Header;

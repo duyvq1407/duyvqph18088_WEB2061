@@ -1,6 +1,8 @@
+import toastr from "toastr";
 import { signup } from "../api/user";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import "toastr/build/toastr.min.css";
 
 const Signup = {
     async render() {
@@ -12,6 +14,7 @@ const Signup = {
                         <div>
                             <h2 class="text-4xl text-black font-bold">Đăng ký</h2>
                         </div>
+                        <div class="w-12 mt-5 h-1 bg-black shadow"></div>
                     </div>
                     <div class="pt-[50px] pl-[25px] border-l-[1px] border-solid border-[#d5d5d5] ">
                         <div class="md:grid md:gap-6">
@@ -64,16 +67,19 @@ const Signup = {
         const formSignup = document.querySelector("#formSignup");
         formSignup.addEventListener("submit", async (e) => {
             e.preventDefault();
-
+            // call api
             try {
-                const data = await signup({
+                const response = await signup({
                     username: document.querySelector("#username").value,
                     email: document.querySelector("#email").value,
                     password: document.querySelector("#password").value,
                 });
-                console.log(data);
+                toastr.success("Đăng ký thành công");
+                setTimeout(() => {
+                    document.location.href = "/account";
+                }, 2000);
             } catch (error) {
-                console.log(error);
+                toastr.error(error.response.data);
             }
         });
     },

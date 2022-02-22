@@ -16,6 +16,7 @@ const SignInPage = {
                         <div>
                             <h2 class="text-4xl text-black font-bold">Đăng nhập</h2>
                         </div>
+                        <div class="w-12 mt-5 h-1 bg-black shadow"></div> 
                     </div>
                     <div class="pt-[50px] pl-[25px] border-l-[1px] border-solid border-[#d5d5d5] ">
                         <div class="min-h-full flex items-center justify-center">
@@ -95,7 +96,7 @@ const SignInPage = {
                         if (data.user.id === 1) {
                             document.location.href = "/admin/products";
                         } else {
-                            document.location.href = "/";
+                            document.location.href = "/account";
                         }
                     }, 2000);
                 }
