@@ -77,10 +77,11 @@ const NavBar = {
             const { data } = await searchProduct(searchinput.value);
             if (data) {
                 localStorage.setItem("search", JSON.stringify(data));
+                localStorage.setItem("searchinput", JSON.stringify(searchinput.value));
             }
             setTimeout(() => {
                 document.location.href = "/search";
-            }, 500);
+            }, 200);
         });
     },
 };
