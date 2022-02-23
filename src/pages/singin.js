@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
 import { signin } from "../api/user";
 import Footer from "../components/footer";
 import Header from "../components/header";
@@ -80,29 +83,59 @@ const SignInPage = {
         `;
     },
     afterRender() {
-        const formSignin = document.querySelector("#formSignin");
-        formSignin.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            try {
-            // call api
-                const { data } = await signin({
-                    email: document.querySelector("#email").value,
-                    password: document.querySelector("#password").value,
-                });
-                if (data) {
-                    localStorage.setItem("user", JSON.stringify(data.user));
-                    toastr.success("Đăng nhập thành công");
-                    setTimeout(() => {
-                        if (data.user.id === 1) {
-                            document.location.href = "/admin/products";
-                        } else {
-                            document.location.href = "/account";
+        const formSignin = $("#formSignin");
+        formSignin.validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true,
+                    minlength: 5,
+                    maxlength: 50,
+                },
+                password: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 15,
+                },
+            },
+            messages: {
+                email: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    email: "Email sai định dạng",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 50 ký tự anh ei",
+                },
+                password: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 15 ký tự anh ei",
+                },
+            },
+            submitHandler: () => {
+                async function signUpHandler() {
+                    try {
+                    // call api
+                        const { data } = await signin({
+                            email: document.querySelector("#email").value,
+                            password: document.querySelector("#password").value,
+                        });
+                        if (data) {
+                            localStorage.setItem("user", JSON.stringify(data.user));
+                            toastr.success("Đăng nhập thành công");
+                            setTimeout(() => {
+                                if (data.user.id === 1) {
+                                    document.location.href = "/admin/products";
+                                } else {
+                                    document.location.href = "/account";
+                                }
+                            }, 2000);
                         }
-                    }, 2000);
+                    } catch (error) {
+                        toastr.error(error.response.data);
+                    }
                 }
-            } catch (error) {
-                toastr.error(error.response.data);
-            }
+                signUpHandler();
+            },
         });
     },
 };

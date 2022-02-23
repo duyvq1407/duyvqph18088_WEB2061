@@ -1,8 +1,12 @@
+/* eslint-disable import/order */
+/* eslint-disable no-unused-vars */
 import toastr from "toastr";
 import { signup } from "../api/user";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
 
 const Signup = {
     async render() {
@@ -24,14 +28,14 @@ const Signup = {
                                         <div class="grid grid-cols-12 gap-6">
                                             <div class="col-span-12">
                                                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                                <input type="text" name="email" id="email" autocomplete="email"
+                                                <input type="text" name="email" id="email" autocomplete="email" required
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                             </div>
 
                                             <div class="col-span-12">
                                                 <label for="user"
                                                     class="block text-sm font-medium text-gray-700">Tên tài khoản</label>
-                                                <input type="text" name="user" id="username" autocomplete="user"
+                                                <input type="text" name="username" id="username" autocomplete="user"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                             </div>
 
@@ -64,23 +68,63 @@ const Signup = {
         `;
     },
     afterRender() {
-        const formSignup = document.querySelector("#formSignup");
-        formSignup.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            // call api
-            try {
-                const response = await signup({
-                    username: document.querySelector("#username").value,
-                    email: document.querySelector("#email").value,
-                    password: document.querySelector("#password").value,
-                });
-                toastr.success("Đăng ký thành công");
-                setTimeout(() => {
-                    document.location.href = "/signin";
-                }, 2000);
-            } catch (error) {
-                toastr.error(error.response.data);
-            }
+        const formSignup = $("#formSignup");
+        formSignup.validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true,
+                    minlength: 5,
+                    maxlength: 50,
+                },
+                username: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 15,
+                },
+                password: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 15,
+                },
+            },
+            messages: {
+                email: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    email: "Email sai định dạng",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 50 ký tự anh ei",
+                },
+                username: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 15 ký tự anh ei",
+                },
+                password: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 15 ký tự anh ei",
+                },
+            },
+            submitHandler: () => {
+                async function signUpHandler() {
+                    // call api
+                    try {
+                        const response = await signup({
+                            username: document.querySelector("#username").value,
+                            email: document.querySelector("#email").value,
+                            password: document.querySelector("#password").value,
+                        });
+                        toastr.success("Đăng ký thành công");
+                        setTimeout(() => {
+                            document.location.href = "/signin";
+                        }, 2000);
+                    } catch (error) {
+                        toastr.error(error.response.data);
+                    }
+                }
+                signUpHandler();
+            },
         });
     },
 };

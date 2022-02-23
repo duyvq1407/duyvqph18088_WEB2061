@@ -10,7 +10,7 @@ const SearchPage = {
                 <div class="max-w-6xl mx-auto sanphammoi pt-[135px]">
                     <div class="sanphammoi_tiltle px-[40px] text-center pt-10">
                         <h2>
-                            <a href="#">Tìm kiếm cho ${JSON.parse(localStorage.getItem("searchinput"))}</a>
+                            <a href="#">Tìm kiếm cho "${JSON.parse(localStorage.getItem("searchinput"))}"</a>
                         </h2>
                     </div>
                     <div class="pt-10 grid grid-cols-4 gap-8">

@@ -245,6 +245,12 @@
       "password": "$2a$10$SytDjo.zsSK7WpWR78lYqedTuqZJ.tZJb.P6Ao3jieNcYX57vXpIS",
       "username": "123456",
       "id": 3
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$OEa699WW4RN9dBkct0kn2eyhY3ChN.lpbZ9lHT8HzpOMwE4c2CwvC",
+      "username": "admin1",
+      "id": 4
     }
   ]
 }
