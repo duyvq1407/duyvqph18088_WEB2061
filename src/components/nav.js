@@ -37,7 +37,7 @@ const NavBar = {
                             </nav>
                         </div>
                         <div class="col-span-1 flex justify-between">
-                            <a href="/signin" Id="cart"><img src="https://cdn-icons.flaticon.com/png/128/665/premium/665865.png?token=exp=1645441308~hmac=66538ff3e8236beb94b2c794b69e40ea" style="width: 18px; height: 18px" ></a>
+                            <a href="/cart" Id="cart"><img src="https://cdn-icons.flaticon.com/png/128/665/premium/665865.png?token=exp=1645441308~hmac=66538ff3e8236beb94b2c794b69e40ea" style="width: 18px; height: 18px" ></a>
                             <a href="/signin" Id="account"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" style="width: 18px; height: 18px"></a>
                             <button><img Id="search" onclick="openSearchPanel()" src="https://cdn-icons.flaticon.com/png/128/3031/premium/3031293.png?token=exp=1645441456~hmac=cf28fbb3e1b4851e44263ec4cd087642" style="width: 18px; height: 18px"></button>
                         </div>

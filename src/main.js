@@ -18,6 +18,7 @@ import SignInPage from "./pages/singin";
 import AccountPage from "./pages/account";
 import Header from "./components/header";
 import SearchPage from "./pages/search";
+import CartPage from "./pages/cart";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 export default router;
@@ -46,6 +47,9 @@ router.on({
     },
     "/signin": () => {
         print(SignInPage);
+    },
+    "/cart": () => {
+        print(CartPage);
     },
     "/search": () => {
         print(SearchPage);

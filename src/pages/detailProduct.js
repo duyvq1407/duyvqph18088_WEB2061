@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-vars */
+import $ from "jquery";
+import validate from "jquery-validation";
+import toastr from "toastr";
 import { getCategory } from "../api/categories";
 import { getProduct, getProductsByCateId } from "../api/product";
 import Footer from "../components/footer";
@@ -50,7 +54,7 @@ const DetailProductPage = {
                             <div class="d-flex align-items-center" style="margin: 20px 0;">
                                 <div class="text-left">
                                     <input type="number" class="rounded-lg max-h-[38px] max-w-[70px]" value="1" min="1">
-                                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm vào giỏ hàng</button>
+                                  <button id="btnAddToCart" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm vào giỏ hàng</button>
                                 </div>
                             </div>
                         </form>
@@ -93,6 +97,14 @@ const DetailProductPage = {
             </div>
             ${await Footer.render()}
         `;
+    },
+    afterRender(id) {
+        $("#btnAddToCart").addEventListener("click", async () => {
+            const { data } = await getProduct(id);
+            // addToCart({ ...data, quantity: 1 }, () => {
+            //     toastr.success(`Thêm  ${data.name} vào giỏ hàng thành công!`);
+            // });
+        });
     },
 };
 export default DetailProductPage;
