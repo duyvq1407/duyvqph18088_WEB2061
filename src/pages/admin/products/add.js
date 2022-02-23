@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
 import HeaderAdmin from "../../../components/header_admin";
 import { getAllCategories } from "../../../api/categories";
 import { addProduct } from "../../../api/product";
@@ -27,7 +30,7 @@ const AddProductPage = {
                                     <div class="grid grid-cols-12 gap-6">
                                         <div class="col-span-12">
                                             <label for="first-name" class="block text-sm font-medium text-gray-700">ID</label>
-                                            <input type="text" name="full-name" id="full-name" autocomplete="given-name" readonly placeholder="Autocomplete"
+                                            <input type="text" name="id" id="id" autocomplete="given-name" readonly placeholder="Autocomplete"
                                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                         </div>
 
@@ -93,7 +96,7 @@ const AddProductPage = {
         `;
     },
     afterRender() {
-        const formAdd = document.querySelector("#form-add-product");
+        const formAdd = $("#form-add-product");
         const imgPost = document.querySelector("#image");
         const imgPost2 = document.querySelector("#image2");
         const imgPreview = document.querySelector("#imgPreview");
@@ -108,48 +111,130 @@ const AddProductPage = {
         imgPost2.addEventListener("change", (e) => {
             imgPreview2.src = URL.createObjectURL(e.target.files[0]);
         });
-
-        formAdd.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            // Lấy giá trị input file
-            const file = imgPost.files[0];
-            const file2 = imgPost2.files[0];
-
-            // append vào object formData
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-
-            // call api cloudinary
-            const response = await axios.post(CLOUDINARY_API, formData, {
-                headers: {
-                    "Content-Type": "application/form-data",
+        formAdd.validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 150,
                 },
-            });
-            const formData2 = new FormData();
-            formData2.append("file", file2);
-            formData2.append("upload_preset", CLOUDINARY_PRESET);
-
-            // call api cloudinary
-            const response2 = await axios.post(CLOUDINARY_API, formData2, {
-                headers: {
-                    "Content-Type": "application/form-data",
+                detail: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 150,
                 },
-            });
-            addProduct({
-                name: document.querySelector("#name-product").value,
-                cate_id: document.querySelector("#cate_Id").value,
-                price: document.querySelector("#price-product").value,
-                detail: document.querySelector("#detail-product").value,
-                image: response.data.url,
-                image2: response2.data.url,
-            });
-            toastr.success("Thêm sản phẩm thành công");
-            setTimeout(() => {
-                document.location.href = "/admin/products";
-            }, 3000);
+                price: {
+                    required: true,
+                    number: true,
+                },
+                image: {
+                    required: true,
+                },
+            },
+            messages: {
+                name: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 150 ký tự anh ei",
+                },
+                detail: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 150 ký tự anh ei",
+                },
+                price: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    number: "Giá thì nhập số nào anh",
+                },
+                image: {
+                    required: "<br>Chọn ảnh đi anh zai",
+                },
+            },
+            submitHandler: () => {
+                async function addProductHandler() {
+                    // Lấy giá trị input file
+                    const file = imgPost.files[0];
+                    const file2 = imgPost2.files[0];
+
+                    // append vào object formData
+                    const formData = new FormData();
+                    formData.append("file", file);
+                    formData.append("upload_preset", CLOUDINARY_PRESET);
+
+                    // call api cloudinary
+                    const response = await axios.post(CLOUDINARY_API, formData, {
+                        headers: {
+                            "Content-Type": "application/form-data",
+                        },
+                    });
+                    const formData2 = new FormData();
+                    formData2.append("file", file2);
+                    formData2.append("upload_preset", CLOUDINARY_PRESET);
+
+                    // call api cloudinary
+                    const response2 = await axios.post(CLOUDINARY_API, formData2, {
+                        headers: {
+                            "Content-Type": "application/form-data",
+                        },
+                    });
+                    addProduct({
+                        name: document.querySelector("#name-product").value,
+                        cate_id: document.querySelector("#cate_Id").value,
+                        price: document.querySelector("#price-product").value,
+                        detail: document.querySelector("#detail-product").value,
+                        image: response.data.url,
+                        image2: response2.data.url,
+                    });
+                    toastr.success("Thêm sản phẩm thành công");
+                    setTimeout(() => {
+                        document.location.href = "/admin/products";
+                    }, 3000);
+                }
+                addProductHandler();
+            },
         });
+
+        // formAdd.addEventListener("submit", async (e) => {
+        //     e.preventDefault();
+
+        //     // Lấy giá trị input file
+        //     const file = imgPost.files[0];
+        //     const file2 = imgPost2.files[0];
+
+        //     // append vào object formData
+        //     const formData = new FormData();
+        //     formData.append("file", file);
+        //     formData.append("upload_preset", CLOUDINARY_PRESET);
+
+        //     // call api cloudinary
+        //     const response = await axios.post(CLOUDINARY_API, formData, {
+        //         headers: {
+        //             "Content-Type": "application/form-data",
+        //         },
+        //     });
+        //     const formData2 = new FormData();
+        //     formData2.append("file", file2);
+        //     formData2.append("upload_preset", CLOUDINARY_PRESET);
+
+        //     // call api cloudinary
+        //     const response2 = await axios.post(CLOUDINARY_API, formData2, {
+        //         headers: {
+        //             "Content-Type": "application/form-data",
+        //         },
+        //     });
+        //     addProduct({
+        //         name: document.querySelector("#name-product").value,
+        //         cate_id: document.querySelector("#cate_Id").value,
+        //         price: document.querySelector("#price-product").value,
+        //         detail: document.querySelector("#detail-product").value,
+        //         image: response.data.url,
+        //         image2: response2.data.url,
+        //     });
+        //     toastr.success("Thêm sản phẩm thành công");
+        //     setTimeout(() => {
+        //         document.location.href = "/admin/products";
+        //     }, 3000);
+        // });
     },
 };
 export default AddProductPage;

@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable max-len */
 import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import $ from "jquery";
+import validate from "jquery-validation";
 import { getAllCategories } from "../../../api/categories";
 import { getProduct, updateProduct } from "../../../api/product";
 import HeaderAdmin from "../../../components/header_admin";
@@ -100,7 +103,7 @@ const EditProductPage = {
     async afterRender(id) {
         let linkImg;
         let linkImg2;
-        const formEdit = document.querySelector("#form-edit-product");
+        const formEdit = $("#form-edit-product");
         const imgPost = document.querySelector("#image");
         const imgPost2 = document.querySelector("#image2");
         const imgPreview = document.querySelector("#imgPreview");
@@ -115,54 +118,137 @@ const EditProductPage = {
         imgPost2.addEventListener("change", (e) => {
             imgPreview2.src = URL.createObjectURL(e.target.files[0]);
         });
+        formEdit.validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 150,
+                },
+                detail: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 150,
+                },
+                price: {
+                    required: true,
+                    number: true,
+                },
+            },
+            messages: {
+                name: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 150 ký tự anh ei",
+                },
+                detail: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    minlength: "Ít nhất phải 5 ký tự anh ei",
+                    maxlength: "Không được vượt quá 150 ký tự anh ei",
+                },
+                price: {
+                    required: "Bắt buộc phải nhập trường này anh ei",
+                    number: "Giá thì nhập số nào anh",
+                },
+            },
+            submitHandler: () => {
+                async function editProductHandler() {
+                    // Lấy giá trị input file
+                    const file = imgPost.files[0];
+                    if (file) {
+                        // append vào object formData
+                        const formData = new FormData();
+                        formData.append("file", file);
+                        formData.append("upload_preset", CLOUDINARY_PRESET);
 
-        formEdit.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            // Lấy giá trị input file
-            const file = imgPost.files[0];
-            if (file) {
-                // append vào object formData
-                const formData = new FormData();
-                formData.append("file", file);
-                formData.append("upload_preset", CLOUDINARY_PRESET);
+                        // call api cloudinary
+                        const response = await axios.post(CLOUDINARY_API, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data",
+                            },
+                        });
+                        linkImg = response.data.url;
+                    }
+                    // Lấy giá trị input file
+                    const file2 = imgPost2.files[0];
+                    if (file2) {
+                        const formData2 = new FormData();
+                        formData2.append("file", file2);
+                        formData2.append("upload_preset", CLOUDINARY_PRESET);
 
-                // call api cloudinary
-                const response = await axios.post(CLOUDINARY_API, formData, {
-                    headers: {
-                        "Content-Type": "application/form-data",
-                    },
-                });
-                linkImg = response.data.url;
-            }
-            // Lấy giá trị input file
-            const file2 = imgPost2.files[0];
-            if (file2) {
-                const formData2 = new FormData();
-                formData2.append("file", file2);
-                formData2.append("upload_preset", CLOUDINARY_PRESET);
-
-                // call api cloudinary
-                const response2 = await axios.post(CLOUDINARY_API, formData2, {
-                    headers: {
-                        "Content-Type": "application/form-data",
-                    },
-                });
-                linkImg2 = response2.data.url;
-            }
-            updateProduct({
-                id,
-                name: document.querySelector("#name-product").value,
-                cate_id: document.querySelector("#cate_Id").value,
-                price: document.querySelector("#price-product").value,
-                detail: document.querySelector("#detail-product").value,
-                image: linkImg ? linkImg : imgPreview.src,
-                image2: linkImg2 ? linkImg2 : imgPreview2.src,
-            });
-            toastr.success("Sửa sản phẩm thành công");
-            setTimeout(() => {
-                document.location.href = "/admin/products";
-            }, 3000);
+                        // call api cloudinary
+                        const response2 = await axios.post(CLOUDINARY_API, formData2, {
+                            headers: {
+                                "Content-Type": "application/form-data",
+                            },
+                        });
+                        linkImg2 = response2.data.url;
+                    }
+                    updateProduct({
+                        id,
+                        name: document.querySelector("#name-product").value,
+                        cate_id: document.querySelector("#cate_Id").value,
+                        price: document.querySelector("#price-product").value,
+                        detail: document.querySelector("#detail-product").value,
+                        image: linkImg ? linkImg : imgPreview.src,
+                        image2: linkImg2 ? linkImg2 : imgPreview2.src,
+                    });
+                    toastr.success("Sửa sản phẩm thành công");
+                    setTimeout(() => {
+                        document.location.href = "/admin/products";
+                    }, 3000);
+                }
+                editProductHandler();
+            },
         });
+
+        // formEdit.addEventListener("submit", async (e) => {
+        //     e.preventDefault();
+        //     // Lấy giá trị input file
+        //     const file = imgPost.files[0];
+        //     if (file) {
+        //         // append vào object formData
+        //         const formData = new FormData();
+        //         formData.append("file", file);
+        //         formData.append("upload_preset", CLOUDINARY_PRESET);
+
+        //         // call api cloudinary
+        //         const response = await axios.post(CLOUDINARY_API, formData, {
+        //             headers: {
+        //                 "Content-Type": "application/form-data",
+        //             },
+        //         });
+        //         linkImg = response.data.url;
+        //     }
+        //     // Lấy giá trị input file
+        //     const file2 = imgPost2.files[0];
+        //     if (file2) {
+        //         const formData2 = new FormData();
+        //         formData2.append("file", file2);
+        //         formData2.append("upload_preset", CLOUDINARY_PRESET);
+
+        //         // call api cloudinary
+        //         const response2 = await axios.post(CLOUDINARY_API, formData2, {
+        //             headers: {
+        //                 "Content-Type": "application/form-data",
+        //             },
+        //         });
+        //         linkImg2 = response2.data.url;
+        //     }
+        //     updateProduct({
+        //         id,
+        //         name: document.querySelector("#name-product").value,
+        //         cate_id: document.querySelector("#cate_Id").value,
+        //         price: document.querySelector("#price-product").value,
+        //         detail: document.querySelector("#detail-product").value,
+        //         image: linkImg ? linkImg : imgPreview.src,
+        //         image2: linkImg2 ? linkImg2 : imgPreview2.src,
+        //     });
+        //     toastr.success("Sửa sản phẩm thành công");
+        //     setTimeout(() => {
+        //         document.location.href = "/admin/products";
+        //     }, 3000);
+        // });
     },
 };
 export default EditProductPage;
