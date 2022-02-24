@@ -37,9 +37,9 @@ const NavBar = {
                             </nav>
                         </div>
                         <div class="col-span-1 flex justify-between">
-                            <a href="/cart" Id="cart"><img src="https://cdn-icons.flaticon.com/png/128/665/premium/665865.png?token=exp=1645441308~hmac=66538ff3e8236beb94b2c794b69e40ea" style="width: 18px; height: 18px" ></a>
+                            <a href="/cart" Id="cart"><img src="https://cdn-icons.flaticon.com/png/128/665/premium/665865.png?token=exp=1645606188~hmac=0d5468f824f0aa50283c45541e77e079" style="width: 18px; height: 18px" ></a>
                             <a href="/signin" Id="account"><img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" style="width: 18px; height: 18px"></a>
-                            <button><img Id="search" onclick="openSearchPanel()" src="https://cdn-icons.flaticon.com/png/128/3031/premium/3031293.png?token=exp=1645441456~hmac=cf28fbb3e1b4851e44263ec4cd087642" style="width: 18px; height: 18px"></button>
+                            <button><img Id="search" onclick="openSearchPanel()" src="https://cdn-icons.flaticon.com/png/128/3031/premium/3031293.png?token=exp=1645606274~hmac=3228d4c18bb03908af3184918fd38649" style="width: 18px; height: 18px"></button>
                         </div>
                     </div>
                 </div>
@@ -68,21 +68,25 @@ const NavBar = {
     afterRender() {
         const account = document.querySelector("#account");
         if (JSON.parse(localStorage.getItem("user"))) {
-            account.href = "/account";
+            if (account) {
+                account.href = "/account";
+            }
         }
         const formSearch = document.querySelector("#form_search");
         const searchinput = document.querySelector("#search_input");
-        formSearch.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const { data } = await searchProduct(searchinput.value);
-            if (data) {
-                localStorage.setItem("search", JSON.stringify(data));
-                localStorage.setItem("searchinput", JSON.stringify(searchinput.value));
-            }
-            setTimeout(() => {
-                document.location.href = "/search";
-            }, 200);
-        });
+        if (formSearch) {
+            formSearch.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const { data } = await searchProduct(searchinput.value);
+                if (data) {
+                    localStorage.setItem("search", JSON.stringify(data));
+                    localStorage.setItem("searchinput", JSON.stringify(searchinput.value));
+                }
+                setTimeout(() => {
+                    document.location.href = "/search";
+                }, 200);
+            });
+        }
     },
 };
 export default NavBar;

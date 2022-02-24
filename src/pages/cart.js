@@ -11,7 +11,7 @@ const CartPage = {
                 
                     <div class="pointer-events-none flex max-w-full justify-center">
                     <div class="pointer-events-auto w-screen max-w-6xl">
-                        <div class="flex h-full flex-col overflow-y-scroll bg-white">
+                        <div class="flex h-full flex-col bg-white">
                         <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                             <div class="flex items-start justify-between">
                             <h2 class="text-4xl font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
@@ -93,7 +93,7 @@ const CartPage = {
                             </div>
                             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                             <p>
-                                or <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                                or <a href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></a>
                             </p>
                             </div>
                         </div>

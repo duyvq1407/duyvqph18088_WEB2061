@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
-import $ from "jquery";
-import validate from "jquery-validation";
 import toastr from "toastr";
+import { addToCart } from "../../utils/cart";
 import { getCategory } from "../api/categories";
 import { getProduct, getProductsByCateId } from "../api/product";
 import Footer from "../components/footer";
@@ -99,11 +98,12 @@ const DetailProductPage = {
         `;
     },
     afterRender(id) {
-        $("#btnAddToCart").addEventListener("click", async () => {
+        const btnAddToCart = document.querySelector("#btnAddToCart");
+        btnAddToCart.addEventListener("click", async () => {
             const { data } = await getProduct(id);
-            // addToCart({ ...data, quantity: 1 }, () => {
-            //     toastr.success(`Thêm  ${data.name} vào giỏ hàng thành công!`);
-            // });
+            addToCart({ ...data, quantity: 1 }, () => {
+                toastr.success(`Thêm  ${data.name} vào giỏ hàng thành công!`);
+            });
         });
     },
 };
