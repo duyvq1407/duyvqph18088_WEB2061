@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-alert */
 let cart = [];
@@ -15,26 +16,29 @@ export const addToCart = (newProduct, next) => {
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
 };
-export const increaseItemInCart = (id) => {
-    cart.find((product) => product.id === id).quantity++;
+export const increaseQuantity = (id, next) => {
+    cart.find((item) => item.id === id).quantity++;
     localStorage.setItem("cart", JSON.stringify(cart));
+    next();
 };
-export const decreaseItemInCart = (id) => {
-    const currenProduct = cart.find((product) => product.id === id);
-    currenProduct.quantity--;
-    // nếu sản phẩm giảm nhỏ hơn 1 thì xóa
-    if (currenProduct.quantity < 1) {
-        const confirm = window.confirm("Bạn có muốn xóa sản phẩm này không?");
+export const decreaseQuantity = (id, next) => {
+    const currentProduct = cart.find((item) => item.id == id);
+    currentProduct.quantity--;
+    if (currentProduct.quantity < 1) {
+        const confirm = window.confirm("Bạn có muốn xóa không");
         if (confirm) {
-            cart = cart.filter((item) => item.id !== currenProduct.id);
+            cart = cart.filter((item) => item.id != id);
+        } else {
+            cart.find((e) => e.id == id).quantity = 1;
         }
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+    next();
 };
 export const removeItemInCart = (id, next) => {
-    const confirm = window.confirm("Bạn có muốn xóa sản phẩm này không?");
+    const confirm = window.confirm("Bạn có muốn xóa không");
     if (confirm) {
-        cart = cart.filter((item) => item.id !== id);
+        cart = cart.filter((item) => item.id != id);
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
