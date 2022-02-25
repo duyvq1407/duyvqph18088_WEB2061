@@ -7,7 +7,7 @@ const NavBar = {
         return /* html */`
             <div class="header fixed top-8 left-0 right-0 z-50 h-[70px] shadow-lg">
                 <div class="header_container bg-[#fff] z-1">
-                    <div class="container m-auto max-w-6xl grid grid-cols-12 flex items-center">
+                    <div class="container m-auto max-w-6xl grid grid-cols-12 items-center">
                         <div class="col-span-11 header_content h-[130px] transition-all duration-300 flex flex-row items-center justify-start">
                             <div class="logo"><a href="#"><img class="h-[100px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1280px-Disney_wordmark.svg.png"></a></div>
                             <nav class="main_nav ml-[130px]">

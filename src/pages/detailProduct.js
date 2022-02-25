@@ -87,9 +87,7 @@ const DetailProductPage = {
         const quantity = document.querySelector("#quantity");
         const size = document.getElementsByName("size");
         const btnAddToCart = document.querySelector("#btnAddToCart");
-        let sizechecked;
         btnAddToCart.addEventListener("click", async () => {
-            console.log(sizechecked);
             const { data } = await getProduct(id);
             addToCart({ ...data, quantity: quantity.value ? +quantity.value : 1 }, () => {
                 toastr.success(`Thêm  ${data.name} vào giỏ hàng thành công!`);
