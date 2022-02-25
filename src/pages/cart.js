@@ -59,10 +59,10 @@ const CartPage = {
                                             <p class="text-gray-500">
                                                 Quantity: 
                                                 <div class="flex justify-center items-center">
-                                                    <div class="pr-8 flex"> 
-                                                        <button class="btn btn-decrease" data-id="${cart1.id}">-</button> 
-                                                        <input type="text" class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-1 mx-2" value="${cart1.quantity}"> 
-                                                        <button data-id="${cart1.id}" class="btn btn-increase">+</button> <td></td> 
+                                                    <div class="pl-4 flex"> 
+                                                        <button class="btn btn-decrease border-[1px] border-solid border-[#dadbdd] w-6 h-6" data-id="${cart1.id}">-</button> 
+                                                        <input type="text" class="focus:outline-none bg-[#ededed] border h-6 w-10 border-[#dadbdd] text-base text-black text-center" value="${cart1.quantity}"> 
+                                                        <button data-id="${cart1.id}" class="btn btn-increase border-[1px] border-solid border-[#dadbdd] w-6 h-6">+</button> <td></td> 
                                                     </div>
                                                 </div>
                                             </p>
