@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-else-return */
 /* eslint-disable no-unused-vars */
 import toastr from "toastr";
@@ -7,7 +8,15 @@ import { reRender } from "../../utils";
 
 const CartPage = {
     async render() {
-        if (localStorage.getItem("cart")) {
+        if (localStorage.getItem("cart") == [] || localStorage.getItem("cart") == null) {
+            return `
+                ${await Header.render()}
+                <div class="max-w-6xl pt-[130px] mx-auto text-center">
+                    <h2 class="text-xl">No Item</h2>
+                    <a href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></a>
+                <div>
+            `;
+        } else {
             const cart = JSON.parse(localStorage.getItem("cart"));
             let tongtien = 0;
             cart.forEach((e) => {
@@ -53,16 +62,20 @@ const CartPage = {
                                             </h3>
                                             <p class="ml-4">${new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(cart1.price * cart1.quantity)}</p>
                                             </div>
-                                            <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                                            <p class="mt-1 text-sm text-gray-500">Size: ${cart1.size}</p>
                                         </div>
                                         <div class="flex flex-1 items-end justify-between text-sm">
-                                            <p class="text-gray-500">Quantity: ${cart1.quantity}</p>
-                                            <div class="flex justify-center items-center">
-                                                <div class="pr-8 flex"> 
-                                                    <button class="btn btn-decrease" data-id="${cart1.id}">-</button> 
-                                                    <input type="text" class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-1 mx-2" value="${cart1.quantity}"> 
-                                                    <button data-id="${cart1.id}" class="btn btn-increase">+</button> <td></td> 
-                                                </div>
+                                            <div class="flex justify-center">
+                                                <p class="text-gray-500">
+                                                    Quantity: 
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="pr-8 flex"> 
+                                                            <button class="btn btn-decrease" data-id="${cart1.id}">-</button> 
+                                                            <input type="text" class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-1 mx-2" value="${cart1.quantity}"> 
+                                                            <button data-id="${cart1.id}" class="btn btn-increase">+</button> <td></td> 
+                                                        </div>
+                                                    </div>
+                                                </p>
                                             </div>
                                             <div class="flex">
                                             <button data-id="${cart1.id}" class="btn font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
@@ -98,11 +111,6 @@ const CartPage = {
                 </div>
             </div>
         `;
-        } else {
-            return `            
-            ${await Header.render()}
-            <h1 class="pt-[130px]">No Item</h1>
-            `;
         }
     },
     afterRender() {
@@ -114,16 +122,16 @@ const CartPage = {
                 if (btn.classList.contains("btn-decrease")) {
                     decreaseQuantity(id, () => {
                         toastr.success("Giảm số lượng thành công");
-                        reRender("#app", CartPage);
+                        reRender(CartPage, "#app");
                     });
                 } else if (btn.classList.contains("btn-increase")) {
                     increaseQuantity(id, () => {
                         toastr.success("tăng số lượng thành công");
-                        reRender("#app", CartPage);
+                        reRender(CartPage, "#app");
                     });
                 } else {
                     removeItemInCart(id, () => {
-                        reRender("#app", CartPage);
+                        reRender(CartPage, "#app");
                     });
                 }
             });

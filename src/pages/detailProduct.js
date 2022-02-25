@@ -33,27 +33,13 @@ const DetailProductPage = {
                         <div class="border-b-[1px] border-dotted border-[#d5d5d5]">
                             <h4 class="text-xl font-bold py-3">${new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(data.price)}</h4>
                         </div>
-                        <div id="size" class="form-group-size border-b-[1px] border-dotted border-[#d5d5d5]" onchange="selectSize()">
-                            <div class="inline-block py-3">
-                                <input type="radio" id="size_S" name="size" class="hidden" value="S" checked>
-                                <label class="active label_for_size block m-0 w-[40px] h-[40px] leading-10 text-xs border-[1px] border-solid border-[#5c5c5c] font-medium text-center cursor-pointer" for="size_S">S</label>
-                            </div>
-                            <div class="inline-block py-3">
-                                <input type="radio" id="size_M" name="size" class="hidden" value="M">
-                                <label class="label_for_size block m-0 w-[40px] h-[40px] leading-10 text-xs border-[1px] border-solid border-[#5c5c5c] font-medium text-center cursor-pointer" for="size_M">M</label>
-                            </div>
-                            <div class="inline-block py-3">
-                                <input type="radio" id="size_L" name="size" class="hidden" value="L">
-                                <label class="label_for_size block m-0 w-[40px] h-[40px] leading-10 text-xs border-[1px] border-solid border-[#5c5c5c] font-medium text-center cursor-pointer" for="size_L">L</label>
-                            </div>
-                            <div class="inline-block py-3">
-                                <input type="radio" id="size_XL" name="size" class="hidden" value="XL">
-                                <label class="label_for_size block m-0 w-[40px] h-[40px] leading-10 text-xs  border-[1px] border-solid border-[#5c5c5c] font-medium text-center cursor-pointer" for="size_XL">XL</label>
+                        <div class="d-flex align-items-center" style="margin: 20px 0;">
+                            <div class="text-left">
+                                <input type="number" id="quantity" class="rounded-lg max-h-[38px] max-w-[70px]" value="1" min="1">
                             </div>
                         </div>
                         <div class="d-flex align-items-center" style="margin: 20px 0;">
                             <div class="text-left">
-                                <input type="number" id="quantity" class="rounded-lg max-h-[38px] max-w-[70px]" value="1" min="1">
                                 <button id="btnAddToCart" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm vào giỏ hàng</button>
                             </div>
                         </div>
@@ -99,11 +85,13 @@ const DetailProductPage = {
     },
     afterRender(id) {
         const quantity = document.querySelector("#quantity");
-        const size = document.querySelector("#size");
+        const size = document.getElementsByName("size");
         const btnAddToCart = document.querySelector("#btnAddToCart");
+        let sizechecked;
         btnAddToCart.addEventListener("click", async () => {
+            console.log(sizechecked);
             const { data } = await getProduct(id);
-            addToCart({ ...data, quantity: quantity.value ? +quantity.value : 1, size: size }, () => {
+            addToCart({ ...data, quantity: quantity.value ? +quantity.value : 1 }, () => {
                 toastr.success(`Thêm  ${data.name} vào giỏ hàng thành công!`);
             });
         });

@@ -5,7 +5,7 @@
 //         if (component.afterRender) component.afterRender();
 //     }
 // };
-export const reRender = async (dom, component, id = "") => {
+export const reRender = async (component, dom, id = "") => {
     document.querySelector(dom).innerHTML = await component.render(id);
     if (component.afterRender) component.afterRender(id);
 };

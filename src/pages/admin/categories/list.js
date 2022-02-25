@@ -67,12 +67,12 @@ const listCatePage = {
             const { id } = buttonElement.dataset;
             buttonElement.addEventListener("click", () => {
                 // Xoa phan tu trong mang dua tren ID
-                const confirm = window.confirm("Bạn có muốn xóa hay không?");
+                const confirm = window.confirm("Are you sure you want to delete this item?");
                 if (confirm) {
                     // call api xóa
-                    removeCategory(id)
-                        .then(() => toastr.success("Bạn đã xóa thành công"))
-                        .then(() => reRender(listCatePage, "#app"));
+                    removeCategory(id);
+                    toastr.success("Bạn đã xóa thành công");
+                    reRender(listCatePage, "#app");
                 }
             });
         });
